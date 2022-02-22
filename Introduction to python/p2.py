@@ -2,4 +2,12 @@
 
 a = int(input('Enter a: '))
 b = int(input('Enter b: '))
-print(sum([a,b]))
+
+while b != 0:
+        data = a & b
+        a = a ^ b
+        b = data << 1
+
+print(a)
+
+
