@@ -4,7 +4,7 @@
 
 from collections import Counter
 list_num = Counter([11, 45, 8, 11, 23, 45, 23, 45, 89])
-print(dict(list_num))
+# print(dict(list_num))
 
 
 #-----------------------------------------------------------------
@@ -20,4 +20,21 @@ for i in set_num:
             x += 1
             dictonary[i] = x
                   
+# print(dictonary)
+
+#-----------------------------------------------------------------
+
+list_num = [11, 45, 8, 11, 23, 45, 23, 45, 89]
+set_num = set(list_num)
+dictonary = {}
+
+for i in list_num:
+    if i not in dictonary.keys():
+        dictonary[i] = 1
+    else: 
+        x = dictonary[i]
+        dictonary[i] = x+1
+        
 print(dictonary)
+        
+    
