@@ -25,7 +25,6 @@ for i in set_num:
 #-----------------------------------------------------------------
 
 list_num = [11, 45, 8, 11, 23, 45, 23, 45, 89]
-set_num = set(list_num)
 dictonary = {}
 
 for i in list_num:

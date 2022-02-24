@@ -56,3 +56,58 @@ Output: output as a sorted list without using sorted algorithm
 | ----- | ----- |
 | [1,0,2,2,0,1,0,1,2,0,0] | [0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2]  |
 #
+
+### P6 - Create a function to reverse the entire list without any function and also do not use any indexing or slicing shortcut. Time Complexity O(logn)
+<br>
+
+Input: Input as number list<br>
+Output: Output as reverse number list of given list
+
+| Input | Output |
+| ----- | ----- |
+| [1,2,3,4,5,6,7] | [7, 6, 5, 4, 3, 2, 1] |
+#
+
+### P7 - Convert any lower case string to upper case without in-built python functions.
+<br>
+
+Input: Input as lower case string<br>
+Output: Output as upper case string of given lower case string
+
+| Input | Output |
+| ----- | ----- |
+| 'abcdef ghiz' | 'ABCDEF GHIZ' |
+#
+
+### P8 - Return the sum of duplicates elements from the given List
+<br>
+
+Input: Input as number list<br>
+Output: Output as sum of duplicates number of given list
+
+| Input | Output |
+| ----- | ----- |
+| [3,5,6,3,3,11,12,3,5,2,2,2] | 10 (3+5+2) |
+#
+
+### P9 - Count the subsequence in the given string.
+<br>
+
+Input: Input as string and subsequence string<br>
+Output: Output as sum of subsequence string in string 
+
+| Input | Output |
+| ----- | ----- |
+| "AKSHMARADIYAakshMARADIYAAKSHAKSH" - "AKSH" | 3 |
+| "BCAHGBNAJKGTYUALKWG" - "AG" | 0 |
+#
+### P10 - Find the max sum of sub array
+<br>
+
+Input: Input as number list<br>
+Output: Output as max sum of sub array
+
+| Input | Output |
+| ----- | ----- |
+| [5, 4, 7, -2, 5, 0, 6, 9, 15, -3] | 49 |
+#

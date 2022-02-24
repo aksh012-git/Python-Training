@@ -228,8 +228,8 @@ print(u)
 print(u[0])
 print(u[0][0])
 
-u[1] = 232
-print(u)
+# u[1] = 232
+# print(u)
 
 a = 'aksh Maradiya'
 print(len(a),a)
@@ -298,4 +298,18 @@ print(myList.items())
 print(myList.keys())
 print(myList.values())
 
+#--------------------------------------------------------------------------------
+# exception Handling
+from traceback import print_exc
+while True:
+    try:
+        x = int(input("Please enter a number: "))
+        y = int(input("Please enter a number: "))   
+        print(x/y) 
+        break   
+    except Exception as ex:
+        print(type(ex).__name__ ,':', ex.args[0])
+        print('------------------------------')
+        print_exc()
+        
 #--------------------------------------------------------------------------------
