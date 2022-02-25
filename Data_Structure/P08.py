@@ -1,6 +1,21 @@
 #  Return the sum of duplicates elements from the given List
-# 			Ex. L = [3, 5, 6, 11, 12, 3, 5, 2,2]
+# 			Ex. L = [3, 5, 6, 11, 12, 3, 5]
 # 			Output = 8 (3+5)
+
+num_lst = [3, 5, 6, 11, 12, 3, 5]
+dictonary = {}
+count = 0
+for i in num_lst:
+    if i not in dictonary.keys():
+        dictonary[i] = 1
+    else: 
+        x = dictonary[i]
+        if x+1==2:
+            count+=i
+        dictonary[i] = x+1   
+print(count)
+
+#------------------------------------------------------------------------------------------- 
 
 num_lst = [3,5,6,3,3,11,12,3,5,2,2,2]
 dictonary = {}
@@ -20,9 +35,13 @@ for key,value in dictonary.items():
         tuple_format = tuple_format + '+' + str(key)
     
 tuple_format = '('+tuple_format[1:]+')'  
-print(count,tuple_format)
+# print(count,tuple_format)
         
+
+
+
         
+          
         
         
     

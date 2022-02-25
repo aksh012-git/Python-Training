@@ -1,13 +1,5 @@
-def divide(x, y):
-    try:
-        result = x / y
-    except ZeroDivisionError:
-        print("division by zero!")
-    else:
-        print("result is", result)
-    finally:
-        print("executing finally clause")
-        
-        
-divide(12,12)
-divide(12,0)
+
+dict1 = {'a':1, 'b':2}
+
+print(dict1.get('b'))
+print(dict1['c'])

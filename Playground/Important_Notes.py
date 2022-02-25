@@ -313,3 +313,35 @@ while True:
         print_exc()
         
 #--------------------------------------------------------------------------------
+# 7 Advanced Python Dictionary Techniques You Should Know 
+
+#  https://towardsdatascience.com/7-advanced-python-dictionary-techniques-you-should-know-416194d82d2c
+
+dict1 = {'a': 1, 'b': 2}
+
+print(dict1.pop('a'))
+print(dict1.pop('c', 'Missing Key'))
+print(dict1.pop('d'))
+
+#check key is exist or not:
+dict1 = {'a': 1, 'b': 2}
+
+if dict1.pop('c',False):
+    print('yes')
+else:
+    print('no')
+#--------------------------------------------------------------------------------
+#  Drop Empty Items from a Dictionary
+
+dict1 = {'a': 'apple', 'b': 'banana', 'c':None}
+for key, value in dict1.copy().items():
+    if value is None:
+        dict1.pop(key)
+print(dict1)
+
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+
