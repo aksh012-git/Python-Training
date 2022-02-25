@@ -10,35 +10,40 @@
 # Python code to demonstrate
 # working of sleep()
 
+from telnetlib import PRAGMA_HEARTBEAT
 import time
 import random
 
-player_list = ['AKSH','PRACHI','KSHITIJ','PRAVIN']
+player_list = ['HIREN SIR','HIRAL MA\'AM','NEEL SIR','RUTVIK SIR','PARAM SIR','SHUVAM SIR','DHRUVIN SIR']
 removed_player = ''
 for round1 in range(len(player_list)-1):
         total_of_player_seconds = 0
         round_second = random.randint(5,20)
         count = 0
         print('\n')
-        print('Now start round no.',round1+1)
+        print('Now,start round no.',round1+1)
+        print('------------------------------------')
 
         while total_of_player_seconds <= round_second:
             each_player_seconds = round(random.uniform(0.1,3.0),1)
             total_of_player_seconds += each_player_seconds
             removed_player = player_list[count]
-            print('now, "{0}" have hot potato'.format(removed_player))
+            print('Now,{0} have hot potato'.format(removed_player))
             count+=1
             if count == len(player_list):
                 count = 0   
             time.sleep(each_player_seconds)
 
         player_list.remove(removed_player)
+        print('------------------------------------')
         print('{0} is out of the game 😪'.format(removed_player))
         print('Available_player :', player_list)
         time.sleep(3)
 
 print('\n')
-print('{0} is winner 🥳'.format(player_list[0]))
+print('-------------------------------------')
+print('||  {0} is winner 🥳  ||'.format(player_list[0]))
+print('-------------------------------------','\n')
 
 
 #--------------------------------------------------------------------------------------------------------------

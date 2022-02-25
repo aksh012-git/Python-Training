@@ -2,7 +2,7 @@
 # 	Sample = [1, 2, 3]
 #         Output = [1, 2, 4]
 
-num_list = [9,9,9]
+num_list = [8,9,9,9]
 lenth = len(num_list) -1
 mult = 10**(lenth)
 pure_value = 0
