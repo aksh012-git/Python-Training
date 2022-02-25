@@ -111,3 +111,54 @@ Output: Output as max sum of sub array
 | ----- | ----- |
 | [5, 4, 7, -2, 5, 0, 6, 9, 15, -3] | 49 |
 #
+
+### P11 -Return product of minimum of odd and maximum of even from a given list.
+<br>
+
+Input: Input as number list<br>
+Output: Output as product of max even and min odd
+
+| Input | Output |
+| ----- | ----- |
+| [7, 5,  2, 3, 12, 9, 15, 24] | 72 |
+#
+
+### P12 - Create a simulation program for Hot Potato Game.
+### You can develop with your ideas. Just take care of the following things:
+### - At least one person must remove from each round.
+### - Display name in the console that which user has a hot potato.
+### - Each user holds a potato for random seconds between 0.1 to 3.0
+### - Each round starts after 3 seconds of the previous elimination.
+### - Each round stops at random seconds between 5 to 20.
+### - Display the name of the winner.
+<br>
+
+Input: Input as string list which includes the value as player name<br>
+Output: In output as whole game is running and print line by line player name who have potato currently  and last winner is declared
+
+| Input | Output |
+| ----- | ----- |
+| ['HIREN SIR','HIRAL MA\'AM','NEEL SIR','RUTVIK SIR','PARAM SIR','SHUVAM SIR','DHRUVIN SIR'] | PARAM SIR is winner 🥳 |
+#
+
+### P13 - Return the array which contains the elements which are greater than from its right side
+<br>
+
+Input: Input as number list<br>
+Output: Output as array which contains the elemenets which are greater than from ist rigth side to given array 
+
+| Input | Output |
+| ----- | ----- |
+| [5, 17, 2, 6, 3] | [17,6,3] |
+#
+
+### P14 - Add 1 to given list elements. Do not use string conversion.
+<br>
+
+Input: Input as number list<br>
+Output: Output as list which added 1 in list
+
+| Input | Output |
+| ----- | ----- |
+| [9,9,9] | [1,0,0,0] |
+#
