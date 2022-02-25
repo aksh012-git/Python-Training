@@ -2,23 +2,48 @@
 # 	Sample = [5, 17, 2, 6, 3]
 # 	Output = [17, 6, 3] 
 
-num_list = [5, 17, 2, 6, 3]
+num_list = [5, 17,15, 2, 6, 3,3]
 final_lst = []
+final_lst.append(num_list[len(num_list)-1])
+for i in range(len(num_list)-2,-1,-1):
+    if num_list[i] > final_lst[0]:
+        final_lst.insert(0,num_list[i])
 
-
-for i in range(len(num_list)):
-    flag = False
-    for j in range(i+1,len(num_list)):
-        if num_list[i] > num_list[j]:
-            flag = True
-        else:
-            flag = False
-            break
-    if flag:
-        final_lst.append(num_list[i])
-        
-final_lst.append(num_list[len(num_list)-1])   
 print(final_lst)
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for i in range(len(num_list)):
+#     flag = False
+#     for j in range(i+1,len(num_list)):
+#         if num_list[i] > num_list[j]:
+#             flag = True
+#         else:
+#             flag = False
+#             break
+#     if flag:
+#         final_lst.append(num_list[i])
+        
+# final_lst.append(num_list[len(num_list)-1])   
+# print(final_lst)
             
     
 # def check_greater(value,starting_index,ending_index):

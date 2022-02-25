@@ -17,14 +17,14 @@ player_list = ['HIREN SIR','HIRAL MA\'AM','NEEL SIR','RUTVIK SIR','PARAM SIR','S
 removed_player = ''
 for round1 in range(len(player_list)-1):
         total_of_player_seconds = 0
-        round_second = random.randint(5,20)
+        round_second = random.randint(5,7)
         count = 0
         print('\n')
         print('Now,start round no.',round1+1)
         print('------------------------------------')
 
         while total_of_player_seconds <= round_second:
-            each_player_seconds = round(random.uniform(0.1,3.0),1)
+            each_player_seconds = round(random.uniform(0.1,0.4),1)
             total_of_player_seconds += each_player_seconds
             removed_player = player_list[count]
             print('Now,{0} have hot potato'.format(removed_player))
