@@ -10,7 +10,6 @@
 # Python code to demonstrate
 # working of sleep()
 
-from telnetlib import PRAGMA_HEARTBEAT
 import time
 import random
 
