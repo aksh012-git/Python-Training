@@ -4,27 +4,16 @@
 
 
 string = "BCAHGBNAJKGTYUALKWG"
-find_str = "AG"
-count = 0
-for item in string:
-    if find_str[0] == item:
-       count+=1
-    elif find_str[1] == item:
-        count+=1
-print(count)
-       
-
-#------------------------------------------------------------------------------------------- 
-
-string = "BCAHGBNAJKGTYUALKWG"
-find_str = "AG"
-count = 0
-for item in find_str:
-    for itm in string:
-        if itm == item:
-            count += 1
-# print(count)
-
+find_str = "AG"   
+array = [] 
+count = 0          
+            
+for i in range(len(string)):
+    if find_str[0]==string[i]:
+        for item in string[i+1:]:
+            if find_str[1] == item:
+                count+=1
+print(count) 
 
 
 #-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|

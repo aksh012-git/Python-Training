@@ -1,7 +1,3 @@
-from array import array
-from typing import final
-
-
 dictionary = [
                 [0,1,0],
                 [1,0,0],
@@ -10,11 +6,11 @@ dictionary = [
                 [0,1,1]
              ]
 
-input = [1,2]
+input = [0,1,2]
 
 final_array = []
 
-min_dist = 15
+max_dist = 15
 
 for k in range(len(dictionary)):
             dist_gym = 5
@@ -50,12 +46,12 @@ for k in range(len(dictionary)):
                             dist_store = count1
                     count1+=1
                     
-            if dist_gym+dist_school+dist_store < min_dist:
-                min_dist = dist_gym+dist_school+dist_store
+            if dist_gym+dist_school+dist_store < max_dist:
+                max_dist = dist_gym+dist_school+dist_store
                 final_array=[]
                 final_array.append(k+1)
-            elif dist_gym+dist_school+dist_store == min_dist:
-                min_dist = dist_gym+dist_school+dist_store
+            elif dist_gym+dist_school+dist_store == max_dist:
+                max_dist = dist_gym+dist_school+dist_store
                 final_array.append(k+1)
                 
             # print('building number',k+1)   
