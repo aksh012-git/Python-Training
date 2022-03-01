@@ -159,6 +159,52 @@ Input: Input as number list<br>
 Output: Output as list which added 1 in list
 
 | Input | Output |
-| ----- | ----- |
 | [9,9,9] | [1,0,0,0] |
+#
+
+### P15 - Calculate the sum of the major and minor diagonals of the given matrix
+<br>
+
+Input: Input as 2D matrix<br>
+Output: Output as sum of the major and minor diagonals of the given matrix
+
+| Input | Output |
+| ----- | ----- |
+| [[2, 0, 7], | 2, 16 |
+|   [4, 1, 9], |  |
+|   [8, 1, -1],] |  |
+#
+
+### P16 - Find the elements of the given list which are exactly the same as the entire product of the list except itself
+<br>
+
+Input: Input as number list<br>
+Output: Output as element of list which are exactly the same as the entire product of the list except itself
+
+| Input | Output |
+| ----- | ----- |
+| [1, 5, 1, 10, 50] | 50 |
+#
+
+### P17 - Print reverse string using recursion
+<br>
+
+Input: Input as string<br>
+Output: Output as reverse string of given string
+
+| Input | Output |
+| ----- | ----- |
+| "helloworld" | "dlrowolleh" |
+#
+
+### P18 - Find the majority element of the given list.
+### Majority element: count of the elements > N/2
+### N = length of list
+<br>
+
+Input: Input as number list<br>
+Output: Output as majority element in the list who greater than half-length of the list
+| Input | Output |
+| ----- | ----- |
+| [5, 2, 3, 5, 1, 5, 1, 2, 5, 5, 5] | 5 |
 #

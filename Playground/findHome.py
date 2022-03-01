@@ -6,7 +6,7 @@ dictionary = [
                 [0,1,1]
              ]
 
-input = [0,1,2]
+input = [0]
 
 final_array = []
 
