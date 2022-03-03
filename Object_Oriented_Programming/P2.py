@@ -8,15 +8,37 @@
 # print(dog.get_info())  ⇒  I am Dog. I am Pet. I am Animal
 
 class Animal():
-    pass
+    def __init__(self):
+        
+
 
 class Wild(Animal):
-    
-    pass
+ 
+
+
 
 class Pet(Animal):
-    pass
+    pet = 'I am pild'
+
+
 
 class Canine(Animal):
+    canine = 'I am canine'
+
+
+
+class Leopard(Wild):
+    def __init__(self,):
+
+
+
+class Tiger(Wild):
     pass
-    
+
+
+class Dog(Pet):
+    pass
+
+
+class Fox(Canine):
+    pass

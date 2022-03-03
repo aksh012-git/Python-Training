@@ -36,14 +36,11 @@ class Manages():
         self.no_of_users = []
         
     def get_existing_user(self):
-        for user in self.no_of_users:
-            print(user.account_no)
-    
-    def remove_user(self,account_no):
-        for item in self.no_of_users:
-            if item[0] == account_no:
-                self.no_of_users.remove(item)
-                break
+        if len(self.no_of_users) == 0:
+            print('Accounts not found...!!!')
+        else:
+            for user in self.no_of_users:
+                print('Ac. No.:{0} Account balance:{1} User Name:{2} mobile no:{3} adrress:{4}'.format(user.account_no,user.account_balance,user.username,user.mobile_no,user.address))
 
 class Atm():
     def check_account(no_of_users,get_ac_no):
@@ -51,13 +48,9 @@ class Atm():
             if user.account_no == get_ac_no:
                 return user
         return False
-                
-        
-                  
+                       
                
 objManage = Manages() 
-
-        
 
 
 print('Welcome to India Bank')
@@ -74,36 +67,43 @@ while True:
                         while True:
                             add_oparation_atm = int(input('\nEnter 0:Show Account Details\nEnter 1: Deposit\nEnter 2:Withdraw\nEnter 3:Close account\nEnter 4:Back\n:'))
                             if add_oparation_atm == 0:
-                                print(get_user_obj.account_no,get_user_obj.account_balance,get_user_obj.username)
+                                print('Your Ac. No.:{0}\nYour Ac. balance:{1}\nname:{2}'.format(get_user_obj.account_no,get_user_obj.account_balance,get_user_obj.username))
                             elif add_oparation_atm == 1:
                                 get_amount = int(input('Enter amount: '))
-                                if int(get_user_obj.account_balance) + get_amount <= 10000:
-                                        get_user_obj.account_balance = int(get_user_obj.account_balance) + get_amount  
-                                else:
-                                    print('Account balance limit: 10000')             
+                                get_user_obj.account_balance = int(get_user_obj.account_balance) + get_amount     
+                                print('Now your current balance is',get_user_obj.account_balance)          
                             elif add_oparation_atm == 2:
                                 get_amount = int(input('Enter amount: '))
-                                if int(get_user_obj.account_balance) - get_amount - 0.5 >= 0:
+                                if int(get_user_obj.account_balance) - get_amount >= 0:
                                     get_user_obj.account_balance = int(get_user_obj.account_balance) - get_amount - 0.5  
+                                    print('Now your current balance is',get_user_obj.account_balance)
                                 else:
-                                    print('insufficient balance')                                  
+                                    print('insufficient balance..!!!\nYour current balance is {0}'.format(get_user_obj.account_balance))                                  
                             elif add_oparation_atm == 3:
                                 objManage.no_of_users.remove(get_user_obj)
+                                break
                             elif add_oparation_atm == 4:
                                 break
                     else:
-                        print('not found')
+                        print('Account not found..!!!')
                 elif options == 1:
                     username = input('Enter Your Name: ')
                     mobile_no = input('Enter Your mobile no: ')
                     address = input('Enter Your adrress: ')
-                    account_balance = input('Enter the amount of balance that you want to deposit: ')
+                    while True:
+                            account_balance = int(input('Enter the amount of balance that you want to deposit.\nAccount balance limit: 10000\n:)'))
+                            if account_balance < 10000:
+                               print('You must add 10000 Rs.!!!')   
+                            else:
+                                break                                             
                     obj = Users(username,mobile_no,address,account_balance)
-                    objManage.no_of_users.append(obj)   
+                    objManage.no_of_users.append(obj)  
+                    print('Congratulations 🥳, Now you are member of India bank\nPlease note your Account no {0}'.format(obj.account_no)) 
+                    
                 elif options == 2:
                     break    
         elif add_oparation == 1:
-            print('admin')
+            objManage.get_existing_user()
         elif add_oparation == 2:
             break
         else:
@@ -113,4 +113,3 @@ while True:
         print('Please Enter only 0,1 or 2')
         
         
-objManage.get_existing_user()
