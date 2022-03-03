@@ -1,15 +1,10 @@
-class a():
-    count = 0
-    def __init__(self):
-        self.x = a.count
-        a.count = a.count+5
-    def aksh(self):
-        print(a.count,self.x)
-    
+# import datetime  
+# birthday=input("What is your next B'day Date? (in DD/MM/YYYY) ")  
+# birthdate=datetime.datetime.strptime(birthday,"%d/%m/%Y").date()
+# print(type(birthdate.date),birthdate.data())
 
-print(a.count)
-x = a()
-x.aksh()
-y = a()
-y.aksh()
 
+# from datetime import date
+
+# today = date.today().year
+# print(type(today.year))
