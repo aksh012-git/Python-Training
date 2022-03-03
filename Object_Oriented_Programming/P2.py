@@ -8,37 +8,72 @@
 # print(dog.get_info())  ⇒  I am Dog. I am Pet. I am Animal
 
 class Animal():
-    def __init__(self):
+    def __init__(self,name):
+        self.name = name
         
+    def get_name(self):
+        return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Animal"
 
 
 class Wild(Animal):
+    def get_name(self):
+        return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Wild. " + Animal.get_info(self)
  
 
-
-
 class Pet(Animal):
-    pet = 'I am pild'
+   def get_name(self):
+        return 'My name is ' + self.name
+        
+   def get_info(self):
+        return "I am Pet. " + Animal.get_info(self)
 
 
 
 class Canine(Animal):
-    canine = 'I am canine'
-
+    def get_name(self):
+            return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Canine. " + Animal.get_info(self)
 
 
 class Leopard(Wild):
-    def __init__(self,):
-
+    def get_name(self):
+            return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Leopard. " + Wild.get_info(self)
 
 
 class Tiger(Wild):
-    pass
+    def get_name(self):
+            return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Tiger. " + Wild.get_info(self)
 
 
 class Dog(Pet):
-    pass
+    def get_name(self):
+            return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Dog. " + Pet.get_info(self)
 
 
 class Fox(Canine):
-    pass
+    def get_name(self):
+            return 'My name is ' + self.name
+        
+    def get_info(self):
+        return "I am Fox. " + Canine.get_info(self)
+
+dog = Animal('tommy')
+print(dog.get_name())
+print(dog.get_info())
