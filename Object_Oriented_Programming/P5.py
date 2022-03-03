@@ -187,10 +187,8 @@ class EmployeeManager():
                     f'Name: [{employee_obj.name}]','Deleted succesfully!!!\n'
                     )
                 self.employee_list.remove(employee_obj)
-              
-        
+                   
 object_of_manager = EmployeeManager()
-
 
 while True:
     try:
@@ -200,12 +198,22 @@ while True:
             raise Exception
         elif not operation:         
             name = input('Enter name: ')
-            dob = input('Enter Date of birth (in DD/MM/YYYY): ')
-            dob=datetime.datetime.strptime(dob,"%d/%m/%Y").date()
+            while True:
+                try:
+                    dob = input('Enter Date of birth (in DD/MM/YYYY): ')
+                    dob=datetime.datetime.strptime(dob,"%d/%m/%Y").date()
+                    break
+                except Exception:
+                    print('Please, Enter date in right format (DD/MM/YYYY) - (02/02/2000)')
             city = input('Enter city: ')
             contact_no = int(input('Enter Contact No.: '))
-            joining_date = input('Enter Joining date (in DD/MM/YYYY): ')
-            joining_date=datetime.datetime.strptime(joining_date,"%d/%m/%Y").date()
+            while True:
+                try:
+                    joining_date = input('Enter Joining date (in DD/MM/YYYY): ')
+                    joining_date=datetime.datetime.strptime(joining_date,"%d/%m/%Y").date()
+                    break
+                except Exception:
+                    print('Please, Enter date in right format (DD/MM/YYYY) - (02/02/2000)')
             salary = int(input('Enter salary: '))
             department = input('Enter Department: ')
             post = input('Enter post: ')
@@ -233,7 +241,9 @@ while True:
                     break    
         elif operation == 3:
             employee_id = int(input('Enter employee id: '))
-            object_of_manager.remove_employee(employee_id)
+            confirmation = int(input(f'Are you sure you want delete record of {employee_id} : y/n'))
+            if confirmation == 'y':
+                object_of_manager.remove_employee(employee_id)             
         elif operation == 4:
             break
     except Exception as e:

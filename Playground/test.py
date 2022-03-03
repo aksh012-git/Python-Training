@@ -8,3 +8,15 @@
 
 # today = date.today().year
 # print(type(today.year))
+
+
+try:
+    x = 0
+    try:
+        r = 0
+    except Exception:
+        w = 0
+    c = 232
+    
+except Exception:
+    c = 0
