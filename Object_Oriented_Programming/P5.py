@@ -25,6 +25,7 @@
 
 import datetime 
 from datetime import date
+
 class Person():
     def __init__(self,name,dob,city,contact_no):
         self.name = name
@@ -62,7 +63,8 @@ class EmployeeManager():
                     )
         else:
             print('No such data exist!\n')
-            
+    
+       
     def search(self,value):
         for employee_obj in self.employee_list:
             if (value in employee_obj.name) or (value == str(employee_obj.employee_id)) or (value == employee_obj.city) or (value == employee_obj.department) or (value == employee_obj.post) or (value == str(employee_obj.contact_no)):
@@ -121,19 +123,11 @@ class EmployeeManager():
                         f'Post: [{employee_obj.post}]\n',
                         )
         elif 'i' == value:
-            for index_i,employee_obj_i in enumerate(self.employee_list):
-                for index_j,employee_obj_j in enumerate(self.employee_list):
-                    if employee_obj_i.salary < employee_obj_j.salary:
-                        self.employee_list[index_i],self.employee_list[index_j] = self.employee_list[index_j],self.employee_list[index_i]
-                        
+            self.employee_list.sort(key = lambda x:x.salary)
             self.show_all_employee()
             
         elif 'd' == value:
-            for index_i,employee_obj_i in enumerate(self.employee_list):
-                for index_j,employee_obj_j in enumerate(self.employee_list):
-                    if employee_obj_i.salary > employee_obj_j.salary:
-                        self.employee_list[index_i],self.employee_list[index_j] = self.employee_list[index_j],self.employee_list[index_i]
-                        
+            self.employee_list.sort(key = lambda x:x.salary,reverse=True)       
             self.show_all_employee()
 
     def find_year(self):
@@ -165,13 +159,15 @@ class EmployeeManager():
     def remove_employee(self,id):
         for employee_obj in self.employee_list:
             if int(employee_obj.employee_id) == id: 
-                print(f'Employee id: [{employee_obj.employee_id}]',
-                    f'Name: [{employee_obj.name}]','Deleted succesfully!!!\n'
+                print(f'\n------- Employee id: [{employee_obj.employee_id}]',
+                    f'Name: [{employee_obj.name}]','Deleted succesfully!!! -------\n'
                     )
                 self.employee_list.remove(employee_obj)
                    
 object_of_manager = EmployeeManager()
-
+print('\n|                                                      |')
+print('|--------------- Weboccult Technologies ---------------|')
+print('|                                                      |\n')
 while True:
     try:
         operation = int(input('Enter 0: Add new Employee\nEnter 1: See all Employees\nEnter 2: Search\nEnter 3: Remove user\nEnter 4: Quit\n:)'))
@@ -201,7 +197,9 @@ while True:
             post = input('Enter post: ')
             object_of_employee = Employee(name,dob,city,contact_no,joining_date,salary,department,post)
             object_of_manager.employee_list.append(object_of_employee)
-            print('\n')
+            print('')
+            print(f'--------- Generated employee id for [{name}] is [{object_of_employee.employee_id}] ----------')
+            print('')
         elif operation == 1:
             object_of_manager.show_all_employee()
         elif operation == 2:
@@ -226,7 +224,7 @@ while True:
                     print('Please Enter only 0,1 or 2\n', type(e).__name__,e)
         elif operation == 3:
             employee_id = int(input('Enter employee id: '))
-            confirmation = (input(f'Are you sure you want delete record of {employee_id} : y/n'))
+            confirmation = (input(f'Are you sure you want delete record of {employee_id} : y/n '))
             if confirmation == 'y':
                 object_of_manager.remove_employee(employee_id)             
         elif operation == 4:

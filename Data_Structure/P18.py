@@ -4,18 +4,23 @@
 # A = [5, 2, 3, 5, 1, 5, 1, 2, 5, 5, 5]
 # Ans = 5
 
-num_list = [5, 2, 3, 5, 1, 5, 1, 2, 5, 5, 5]
+num_list = [5, 2, 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3, 1, 5, 1, 2, 5, 5, 5]
 min_count = int(len(num_list)/2)
-num_set = set(num_list)
+print(min_count)
+dictonary = {}
 
-for i in num_set:
-    count = 0
-    for j in num_list:
-        if i==j:
-            count+=1
-    if count > min_count:
-        print(i)
-        break
+for i in num_list:
+    if i not in dictonary.keys():
+        dictonary[i] = 1
+    else: 
+        x = dictonary[i]
+        dictonary[i] = x+1
+        if x+1 > min_count:
+            print(i)
+            break
+
+print(dictonary)
+
             
             
     

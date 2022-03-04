@@ -4,16 +4,18 @@
 # A = [1, 2, 4, 8, 1]
 # Ans = 8
 
-num_list = [1, 2, 4, 8, 1]
+num_list = [1, 2, 8,4, 1]
 
+for i in range(len(num_list)-1):
+    if num_list[i] > num_list[i+1]:
+        num_list[i],num_list[i+1] = num_list[i+1],num_list[i]
+
+multiplication = 1    
 for i in range(len(num_list)):
-    temp_product = 1
-    for j in range(len(num_list)):
-        if i == j:
-            continue
-        else:
-            temp_product *= num_list[j]
-    if temp_product == num_list[i]:
-        print(num_list[i])
-        break
+    if multiplication == num_list[len(num_list)-1]:
+         print(multiplication)
+         break
+    multiplication *= num_list[i]
+        
+        
         

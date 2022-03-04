@@ -5,14 +5,15 @@
 
 string = "BCAHGBNAJKGTYUALKWG"
 find_str = "AG"   
-array = [] 
+count_0f_a = 0
 count = 0          
             
-for i in range(len(string)):
-    if find_str[0]==string[i]:
-        for item in string[i+1:]:
-            if find_str[1] == item:
-                count+=1
+for i in string:
+    if i == 'A':
+        count_0f_a += 1
+    if i == 'G':
+        count = count + count_0f_a
+        
 print(count) 
 
 
