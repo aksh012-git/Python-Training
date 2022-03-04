@@ -126,34 +126,16 @@ class EmployeeManager():
                     if employee_obj_i.salary < employee_obj_j.salary:
                         self.employee_list[index_i],self.employee_list[index_j] = self.employee_list[index_j],self.employee_list[index_i]
                         
-            for employee_obj in self.employee_list:
-                print(f'Employee id: [{employee_obj.employee_id}]',
-                    f'Name: [{employee_obj.name}]',
-                    f'Date of birth: [{employee_obj.dob}]',
-                    f'City: [{employee_obj.city}]',
-                    f'Contact No.: [{employee_obj.contact_no}]',
-                    f'Joining date: [{employee_obj.joining_date}]',
-                    f'Salary: [{employee_obj.salary}]',
-                    f'Department: [{employee_obj.department}]',
-                    f'Post: [{employee_obj.post}]\n',
-                    )
+            self.show_all_employee()
+            
         elif 'd' == value:
             for index_i,employee_obj_i in enumerate(self.employee_list):
                 for index_j,employee_obj_j in enumerate(self.employee_list):
                     if employee_obj_i.salary > employee_obj_j.salary:
                         self.employee_list[index_i],self.employee_list[index_j] = self.employee_list[index_j],self.employee_list[index_i]
                         
-            for employee_obj in self.employee_list:
-                print(f'Employee id: [{employee_obj.employee_id}]',
-                    f'Name: [{employee_obj.name}]',
-                    f'Date of birth: [{employee_obj.dob}]',
-                    f'City: [{employee_obj.city}]',
-                    f'Contact No.: [{employee_obj.contact_no}]',
-                    f'Joining date: [{employee_obj.joining_date}]',
-                    f'Salary: [{employee_obj.salary}]',
-                    f'Department: [{employee_obj.department}]',
-                    f'Post: [{employee_obj.post}]\n',
-                    )
+            self.show_all_employee()
+
     def find_year(self):
         for employee_obj in self.employee_list:
             if employee_obj.joining_date.year == date.today().year:                
@@ -224,24 +206,27 @@ while True:
             object_of_manager.show_all_employee()
         elif operation == 2:
             while True:
-                operation_search = int(input('Enter 0: Search by Name|City|Employee Id|Contact No|Department|Post\nEnter 1: Search by salary\nEnter 2: Search by Joining Year\nEnter 3: See Employee\'s birthday in current month\nEnter 4: back\n:)'))
-                if operation_search > 4 or operation_search < 0:
-                    print('Please Enter only 0,1,2,3 or 4\n')
-                elif not operation_search:
-                    search = input('Search by Name|City|Employee Id|Contact No|Department|Post\n:)')
-                    object_of_manager.search(search)
-                elif operation_search == 1:
-                    search_salary = (input('- If you want to find great/less then salary than write \'>value or <value\'\n- If you want find salary between some value then write \'value-value\'\n- If want find salara increasing/decreasing order then write i/d\n:)'))
-                    object_of_manager.find_salary(search_salary)
-                elif operation_search == 2:
-                    object_of_manager.find_year()
-                elif operation_search == 3:
-                    object_of_manager.find_dob_current()
-                elif operation_search == 4:
-                    break    
+                try:
+                    operation_search = int(input('Enter 0: Search by Name|City|Employee Id|Contact No|Department|Post\nEnter 1: Search by salary\nEnter 2: Search by Joining Year\nEnter 3: See Employee\'s birthday in current month\nEnter 4: back\n:)'))
+                    if operation_search > 4 or operation_search < 0:
+                        print('Please Enter only 0,1,2,3 or 4\n')
+                    elif not operation_search:
+                        search = input('Search by Name|City|Employee Id|Contact No|Department|Post\n:)')
+                        object_of_manager.search(search)
+                    elif operation_search == 1:
+                        search_salary = (input('- If you want to find great/less then salary than write \'>value or <value\'\n- If you want find salary between some value then write \'value-value\'\n- If want find salara increasing/decreasing order then write i/d\n:)'))
+                        object_of_manager.find_salary(search_salary)
+                    elif operation_search == 2:
+                        object_of_manager.find_year()
+                    elif operation_search == 3:
+                        object_of_manager.find_dob_current()
+                    elif operation_search == 4:
+                        break    
+                except Exception:
+                    print('Please Enter only 0,1 or 2\n', type(e).__name__,e)
         elif operation == 3:
             employee_id = int(input('Enter employee id: '))
-            confirmation = int(input(f'Are you sure you want delete record of {employee_id} : y/n'))
+            confirmation = (input(f'Are you sure you want delete record of {employee_id} : y/n'))
             if confirmation == 'y':
                 object_of_manager.remove_employee(employee_id)             
         elif operation == 4:
