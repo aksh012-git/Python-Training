@@ -4,18 +4,18 @@
 
 list_num =  [11, 45, 8, 23, 14, 12, 78, 45, 89]
 number_of_chunks = 3
-elements_of_each_chunks = 3
+count = 0
+final_array = []
 
 for i in range(len(list_num)):
-    print(i)
-    
-
-
-
-
-
-
-
+    chunks = list_num[int(len(list_num)/number_of_chunks*count) : int(len(list_num)/number_of_chunks*(count+1))]
+    chunks.reverse()
+    final_array.append(chunks)
+    count += 1
+    if  count == number_of_chunks:
+        break
+        
+print(final_array)
 
 
 
