@@ -340,7 +340,43 @@ for key, value in dict1.copy().items():
 print(dict1)
 
 #--------------------------------------------------------------------------------
+#numpy
+
+# array to begin with 
+import numpy as np 
+a = np.array([[1,2,3],[3,4,5],[4,5,6]]) 
+
+# print 'Our array is:' 
+print (a) 
+print ('\n')  
+
+# this returns array of items in the second column 
+# 'The items in the second column are:'  
+print (a[...,1]) 
+print ('\n')  
+
+# Now we will slice all items from the second row 
+# print 'The items in the second row are:' 
+print (a[1,...]) 
+print ('\n')  
+
+# Now we will slice all items from column 1 onwards 
+# print 'The items column 1 onwards are:' 
+print (a[...,1:])
+
 #--------------------------------------------------------------------------------
+
+import numpy as np 
+a = np.array([np.nan, 1,2,np.nan,3,4,5]) 
+print (a[a==5])
+print(a[~np.isnan(a)])
+print(a[np.isnan(a)])
+print(np.isnan(a))
+
+
+a = np.array([1, 2+6j, 5, 3.5+5j]) 
+print(a[np.iscomplex(a)])
+
 #--------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------

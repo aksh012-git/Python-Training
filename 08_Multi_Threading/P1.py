@@ -4,20 +4,25 @@ import time
 
 variable = 1
         
-def sum():
+def sum(lock):
     for i in range(20):
+        lock.acquire()
         global variable
         variable += 1
+        lock.release()
         print(variable)
         
-def mult():
+def mult(lock):
     for i in range(20):
+        lock.acquire()
         global variable
         variable -= 1
+        lock.release()
         print(variable)
 
-thread_1 = Thread(target=sum)
-thread_2 = Thread(target=mult)
+lock = Lock()
+thread_1 = Thread(target=sum,args=(lock,))
+thread_2 = Thread(target=mult,args=(lock,))
 
 thread_1.start()
 thread_2.start()
