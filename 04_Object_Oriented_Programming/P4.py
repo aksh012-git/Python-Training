@@ -13,13 +13,6 @@
 # Account balance limit: 10000 
 
 
-
-from audioop import add
-from itertools import count
-
-from click import option
-
-
 class Users():
     account_no_series = 1111
     def __init__(self,username,mobile_no,address,account_balance):

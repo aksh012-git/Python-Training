@@ -20,4 +20,3 @@ while pure_value > 0:
     pure_value = int(pure_value / 10)
 
 print(final_list)
-    

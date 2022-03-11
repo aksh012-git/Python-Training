@@ -74,6 +74,6 @@ class Fox(Canine):
     def get_info(self):
         return "I am Fox. " + Canine.get_info(self)
 
-dog = Animal('tommy')
+dog = Dog('tommy')
 print(dog.get_name())
 print(dog.get_info())

@@ -4,4 +4,4 @@
 
 list_tuple = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
 list_tuple.sort(key = lambda index:index[1])            
-print(list_tuple)          
+print(list_tuple) 

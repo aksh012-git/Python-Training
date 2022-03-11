@@ -1,12 +1,8 @@
-import numpy as np
-m = np.array([[3,-2],[1,0]])
+from email.policy import strict
+import string
 
 
-w, v = np.linalg.eig(m) 
-print( "Eigenvalues of the said matrix",w)
-print( "Eigenvectors of the said matrix",v)
+stirng = '/home/wot-aksh/Desktop/Python_Training/Exam/Folder/text.txt'
 
-print()
-
-
+print('/home/wot-aksh/Desktop/Python_Training/Exam/Folder/text.txt'.split('text.txt')[0]+'text1.txt')
 
