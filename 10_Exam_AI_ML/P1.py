@@ -55,7 +55,7 @@ linesList = readfile.read().splitlines()
 abcd_list = []
 abcd_list[:] = string.ascii_uppercase
 
-count1 = 0
+count_of_file = 0
 for pathOfFile in linesList:
     openTxtFile = open(pathOfFile,'w')
     random_name_length = random.randint(3,7)
@@ -64,8 +64,9 @@ for pathOfFile in linesList:
         random_name = random_name + abcd_list[random.randint(0,25)]
     openTxtFile.write(random_name)
     openTxtFile.close()
-    os.rename(pathOfFile,pathOfFile.split('text.txt')[0]+'text' + str(count1) + '.txt')
-    count1 += 1
+    pathOfstring = pathOfFile.split('Exam')[2]
+    os.rename(pathOfFile,pathOfFile.split('text.txt')[0]+ str(count_of_file)+pathOfstring.replace('/','_'))
+    count_of_file += 1
 
 
 #----------------------------------------------------------------------------------------------------------------------
