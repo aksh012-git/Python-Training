@@ -14,7 +14,7 @@ print('Current date and time: ',pd.datetime.now(),'\n')
 
 end_date = '10/11/2005'
 
-ufo_data['Date_time'] = ufo_data['Date_time'].str.replace('24:00','0:00')
+# ufo_data['Date_time'] = ufo_data['Date_time'].str.replace('24:00','0:00')
 
 ufo_data['Date_time'] = pd.to_datetime(ufo_data['Date_time']).dt.date
 

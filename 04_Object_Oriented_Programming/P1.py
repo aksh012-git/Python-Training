@@ -4,7 +4,7 @@
 # -> Store the returned strings in a list named flash.
 # -> Use a while loop to print all the stored flashcards.
 # -> Add proper error handling
-# 		-> Result image is attached in thread
+# -> Result image is attached in thread
 
 
 class Flashcard():

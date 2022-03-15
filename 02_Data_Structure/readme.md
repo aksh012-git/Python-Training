@@ -125,12 +125,12 @@ Output: Output as product of max even and min odd
 
 ### P12 - Create a simulation program for Hot Potato Game.
 ### You can develop with your ideas. Just take care of the following things:
-### - At least one person must remove from each round.
-### - Display name in the console that which user has a hot potato.
-### - Each user holds a potato for random seconds between 0.1 to 3.0
-### - Each round starts after 3 seconds of the previous elimination.
-### - Each round stops at random seconds between 5 to 20.
-### - Display the name of the winner.
+#### - At least one person must remove from each round.
+#### - Display name in the console that which user has a hot potato.
+#### - Each user holds a potato for random seconds between 0.1 to 3.0
+#### - Each round starts after 3 seconds of the previous elimination.
+#### - Each round stops at random seconds between 5 to 20.
+#### - Display the name of the winner.
 <br>
 
 Input: Input as string list which includes the value as player name<br>
@@ -198,8 +198,8 @@ Output: Output as reverse string of given string
 #
 
 ### P18 - Find the majority element of the given list.
-### Majority element: count of the elements > N/2
-### N = length of list
+#### Majority element: count of the elements > N/2
+#### N = length of list
 <br>
 
 Input: Input as number list<br>
