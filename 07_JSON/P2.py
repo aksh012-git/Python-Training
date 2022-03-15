@@ -3,9 +3,9 @@
 import json
 
 try:
-    open_json_file = open('/home/wot-aksh/Desktop/Python_Training/07_JSON/EmployeeData.json')
+    open_json_file = open('/home/wot-aksh/Desktop/Python_Training/07_JSON/vehicleProperty.json')
     data = json.load(open_json_file)
     for item in data:
-        print(item['name'])
+        print(item,':',data[item])
 except Exception as e:
     print(type(e).__name__,e) 

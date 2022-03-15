@@ -22,9 +22,6 @@ print(v3.name)
 
 
 
-
-
-
 # import json
 
 # class Vehicle:
