@@ -6,15 +6,15 @@ automobile_data = pd.read_csv('/home/wot-aksh/Desktop/Python_Training/11_Pandas/
 #----------------------------------------------------------------------------------------------------------------------------
 """From the given data set print the first and last five rows"""
 
-# print(automobile_data.head())
-# print(automobile_data.tail())
+print(automobile_data.head())
+print(automobile_data.tail())
 
 
 #----------------------------------------------------------------------------------------------------------------------------
 """Clean data and update the CSV file (Replace all column values which contain ‘?’ and n.a with NaN.)"""
 
 automobile_data[automobile_data[:] == '?'] = np.NaN
-# print(automobile_data.head(30))
+print(automobile_data.head(30))
 
 
 
@@ -23,28 +23,28 @@ automobile_data[automobile_data[:] == '?'] = np.NaN
 
 automobile_data['price'] = automobile_data['price'].astype(float)
 
-# print(automobile_data.loc[automobile_data['price']==automobile_data['price'].max(),'make'])
+print(automobile_data.loc[automobile_data['price']==automobile_data['price'].max(),'make'])
 
 
 #----------------------------------------------------------------------------------------------------------------------------
 """Print All Toyota Cars details"""
 
-# print(automobile_data.loc[automobile_data['make'] == 'toyota'])
+print(automobile_data.loc[automobile_data['make'] == 'toyota'])
 
 
 #----------------------------------------------------------------------------------------------------------------------------
 """Count total car per company"""
 
 list_of_unique_value = automobile_data['make'].unique()
-# for company in list_of_unique_value:
-#     print(company,':',automobile_data.loc[automobile_data['make'] == company,'make'].count())
+for company in list_of_unique_value:
+    print(company,':',automobile_data.loc[automobile_data['make'] == company,'make'].count())
 
 
 #----------------------------------------------------------------------------------------------------------------------------
 """Find each company’s Highest price car"""
 
-# for company in list_of_unique_value:
-#     print(company,':',automobile_data.loc[automobile_data['make'] == company,'price'].max())
+for company in list_of_unique_value:
+    print(company,':',automobile_data.loc[automobile_data['make'] == company,'price'].max())
 
 
 #----------------------------------------------------------------------------------------------------------------------------
@@ -55,11 +55,11 @@ cars_name = automobile_data['make']
 
 automobile_data_with_name_mileages = pd.DataFrame({'make':cars_name,'mileage':both_mileage})
 
-# print(automobile_data_with_name_mileages.groupby('make')['mileage'].mean())
+print(automobile_data_with_name_mileages.groupby('make')['mileage'].mean())
 
 
 #----------------------------------------------------------------------------------------------------------------------------
 """Sort all cars by Price column"""
 
 automobile_data = automobile_data.sort_values(by=['price'],ascending=False)
-# print(automobile_data)
+print(automobile_data)
