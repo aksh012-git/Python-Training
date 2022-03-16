@@ -1,0 +1,10 @@
+In Free time or feeling bored
+https://medium.com/datadriveninvestor/coding-sins-hilarious-developer-confessions-f55eb342454e
+https://medium.com/datadriveninvestor/the-most-hilarious-code-comments-ever-bae3cb1030b5
+https://medium.com/datadriveninvestor/programming-humor-part-2-f92cf5a26f2b
+Mathematics
+https://github.com/hrnbot/Basic-Mathematics-for-Machine-Learning (Introduction)
+https://www.3blue1brown.com/essence-of-linear-algebra-page/ (Linear Algebra)
+https://towardsdatascience.com/linear-algebra-explained-in-the-context-of-deep-learning-8fcb8fca1494
+https://medium.com/fintechexplained/calculus-multivariate-calculus-and-machine-learning-242b9efcb41c https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr  (Calculus)
+https://towardsdatascience.com/machine-learning-probability-statistics-f830f8c09326 (probs and stats)
