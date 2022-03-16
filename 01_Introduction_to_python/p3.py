@@ -1,27 +1,25 @@
 # Write a Python program to find common divisors between two numbers in a given pair
 
-def gcdOfTwoNumber(a,b):
-    if (a == b):
-        return a
+def gcdOfTwoNumber(inputNumber1,inputNumber2):
+    if (inputNumber1 == inputNumber2):
+        return inputNumber1
     
-    if (a > b):
-        return gcdOfTwoNumber(a-b, b)
+    if (inputNumber1 > inputNumber2):
+        return gcdOfTwoNumber(inputNumber1-inputNumber2, inputNumber2)
     else:
-        return gcdOfTwoNumber(a, b-a)
+        return gcdOfTwoNumber(inputNumber1, inputNumber2-inputNumber1)
  
-a = int(input("Enter a: "))
-b = int(input("Enter b: "))
-if(gcdOfTwoNumber(a, b)):
-    print(gcdOfTwoNumber(a, b))
+inputNumber1 = int(input("Enter inputNumber1: "))
+inputNumber2 = int(input("Enter inputNumber2: "))
+if(gcdOfTwoNumber(inputNumber1, inputNumber2)):
+    print(gcdOfTwoNumber(inputNumber1, inputNumber2))
     
     
 # ------------------------------------------------------------------------------------------------
 import math
-a = int(input("Enter a: "))
-b = int(input("Enter b: "))
-print(math.gcd(a,b))
-
-
+inputNumber1 = int(input("Enter inputNumber1: "))
+inputNumber2 = int(input("Enter inputNumber2: "))
+print(math.gcd(inputNumber1,inputNumber2))
 
 # ------------------------------------------------------------------------------------------------
 

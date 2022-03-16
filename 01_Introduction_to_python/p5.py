@@ -9,19 +9,19 @@
 
 from datetime import datetime
 
-current = datetime.now()
+currentDateTime = datetime.now()
 
-timeAnddate = lambda x : x
-print(timeAnddate(current))
+timeAnddate = lambda currentDateTime : currentDateTime
+print(timeAnddate(currentDateTime))
 
-timeAnddate = lambda x : x.year
-print(timeAnddate(current))
+timeAnddate = lambda currentYear : currentYear.year
+print(timeAnddate(currentDateTime))
 
-timeAnddate = lambda x : x.month
-print(timeAnddate(current))
+timeAnddate = lambda currentMonth : currentMonth.month
+print(timeAnddate(currentDateTime))
 
-timeAnddate = lambda x : x.day
-print(timeAnddate(current))
+timeAnddate = lambda currentDay : currentDay.day
+print(timeAnddate(currentDateTime))
 
-timeAnddate = lambda x : x.time()
-print(timeAnddate(current))
+timeAnddate = lambda currentTime : currentTime.time()
+print(timeAnddate(currentDateTime))

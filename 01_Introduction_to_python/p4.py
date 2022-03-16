@@ -6,15 +6,15 @@
 #  Odd numbers from the said list:
 #  [1, 3, 5, 7, 9]
 
-listPy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-even = []
-odd = []
+inputList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+outputOfEvenList = []
+outputOfOddList = []
 
-for a in listPy:
-    x = lambda q : q % 2
-    if x(a):
-        odd.append(a)
+for listItem in inputList:
+    moduloValue = lambda number : number % 2
+    if moduloValue(listItem):
+        outputOfOddList.append(listItem)
     else:
-        even.append(a)
+        outputOfEvenList.append(listItem)
         
-print(even,odd)
+print(outputOfEvenList,outputOfOddList)

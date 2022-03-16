@@ -1,7 +1,19 @@
+# Take Automobile.csv Dataset
+#      (Dataset: https://www.kaggle.com/toramky/automobile-dataset )
+# From the given data set print the first and last five rows
+# Clean data and update the CSV file (Replace all column values which contain ‘?’ and n.a with NaN.)
+# Find the most expensive car company name
+# Print All Toyota Cars details
+# Count total car per company
+# Find each company’s Highest price car
+# Find the average mileage of each car making company
+# Sort all cars by Price column
+
+
 import pandas as pd
 import numpy as np
 
-automobile_data = pd.read_csv('/home/wot-aksh/Desktop/Python_Training/11_Pandas/Automobile_data.csv')
+automobile_data = pd.read_csv('11_Pandas/data_of_P1_P2/Automobile_data.csv')
 
 #----------------------------------------------------------------------------------------------------------------------------
 """From the given data set print the first and last five rows"""

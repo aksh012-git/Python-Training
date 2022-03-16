@@ -2,12 +2,12 @@
 # 			Ex. A = “abcdef ghi”
 # 			Output: “ABCDEF GHI
 
-a = 'abcdef ghiz'
-b=''
-for item in a:
+lowerCaseString = 'abcdef ghiz'
+upperCaseString=''
+for item in lowerCaseString:
     if  ord(item)-32 in range(65,91):
-        b = b+chr(ord(item)-32)
+        upperCaseString = upperCaseString+chr(ord(item)-32)
     else: 
-        b = b+item
+        upperCaseString = upperCaseString+item
            
-print(b)
+print(upperCaseString)

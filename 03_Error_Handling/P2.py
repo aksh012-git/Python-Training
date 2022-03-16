@@ -9,12 +9,12 @@
 
 import time
 
-x=0
-while x <= 500:
+inputNumber=0
+while inputNumber <= 500:
     try:
-        print (x)
+        print (inputNumber)
         time.sleep(1)
-        x=x+1
+        inputNumber=inputNumber+1
     except KeyboardInterrupt:
         pass
 
