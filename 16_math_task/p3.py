@@ -1,9 +1,15 @@
 import numpy as np
 
-poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
-poly_2 = [[-20,25],[15,25],[10,10],[-10,10],[-20,25]]
+# poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
+# poly_2 = [[-20,25],[15,25],[10,10],[-10,10],[-20,25]]
 
-final_cord_of_intersept = []
+# poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
+# poly_2 = [[-20,25],[15,25],[15,15],[-20,20],[-20,25]]
+
+poly_1 = [[-10,30],[10,20],[13,18],[-20,10],[-10,30]]
+poly_2 = [[-20,30],[15,25],[15,15],[-5,20],[-20,30]]
+
+final_cord = []
 
 for ploy_1_index in range(0,len(poly_1)-1):
     for poly_2_index in range(0,len(poly_2)-1):
@@ -43,8 +49,8 @@ for ploy_1_index in range(0,len(poly_1)-1):
             if (t >= 0 and t <= 1) and (u >=0 and u <= 1) and (point_q2 + (u * s))[0]==(point_q2 + (u * s))[0] and (point_q2 + (u * s))[1]==(point_q2 + (u * s))[1]:
                 intersect_point = point_p2 + (t * r)
                 # print(point_p2 + (t * r),'Intersect')
-                if list(intersect_point) not in final_cord_of_intersept:
-                    final_cord_of_intersept.append(list(intersect_point))
+                if list(intersect_point) not in final_cord:
+                    final_cord.append(list(intersect_point))
                 
         #For colliner
         if not corss_product_of_r_s and (not for_u): 
@@ -52,25 +58,25 @@ for ploy_1_index in range(0,len(poly_1)-1):
             t1 = t0 + (np.dot(s,r) / (np.dot(r,r)))
             
             #for colliner with overlapping
-            if (0<=t0 and 1>=t0) or (0<=t1 and 1>= t0):
+            if (0<=t0 and 1>=t0) or (0<=t1 and 1>= t1):
                 # print('yes')
                 if (min(point_p1[0],point_p2[0])<=point_q1[0] and max(point_p1[0],point_p2[0])>=point_q1[0]) and (min(point_p1[1],point_p2[1])<=point_q1[1] and max(point_p1[1],point_p2[1])>=point_q1[1]):
-                    if list(point_q1) not in final_cord_of_intersept:
-                        final_cord_of_intersept.append(list(point_q1))
+                    if list(point_q1) not in final_cord:
+                        final_cord.append(list(point_q1))
                         
                 if (min(point_p1[0],point_p2[0])<=point_q2[0] and max(point_p1[0],point_p2[0])>=point_q2[0]) and (min(point_p1[1],point_p2[1])<=point_q2[1] and max(point_p1[1],point_p2[1])>=point_q2[1]):
-                    if list(point_q2) not in final_cord_of_intersept:
-                        final_cord_of_intersept.append(list(point_q2))
+                    if list(point_q2) not in final_cord:
+                        final_cord.append(list(point_q2))
                         
                 if (min(point_q1[0],point_q2[0])<=point_p1[0] and max(point_q1[0],point_q2[0])>=point_p1[0]) and (min(point_q1[1],point_q2[1])<=point_p1[1] and max(point_q1[1],point_q2[1])>=point_p1[1]):
-                    if list(point_p1) not in final_cord_of_intersept:
-                        final_cord_of_intersept.append(list(point_p1))
+                    if list(point_p1) not in final_cord:
+                        final_cord.append(list(point_p1))
                         
                 if (min(point_q1[0],point_q2[0])<=point_p2[0] and max(point_q1[0],point_q2[0])>=point_p2[0]) and (min(point_q1[1],point_q2[1])<=point_p2[1] and max(point_q1[1],point_q2[1])>=point_p2[1]):
-                    if list(point_p2) not in final_cord_of_intersept:
-                        final_cord_of_intersept.append(list(point_p2))
+                    if list(point_p2) not in final_cord:
+                        final_cord.append(list(point_p2))
 
-print(final_cord_of_intersept)
+print(final_cord)
         
         
 
