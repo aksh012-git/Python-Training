@@ -1,3 +1,5 @@
+# reference - https://stackoverflow.com/questions/563198/how-do-you-detect-where-two-line-segments-intersect
+
 class FindIntersect():
     def __init__(self,point_p1,point_p2,point_q1,point_q2):
         self.point_p1 = point_p1
@@ -113,6 +115,31 @@ class FindIntersect():
                     if list(point_p2) not in final_cord:
                         final_cord.append(list(point_p2))
     
+    
+class find_end_point_form_x():
+
+    def __init__(self,poly_1,poly_2):
+        self.poly_1 = poly_1
+        self.poly_2 = poly_2
+        
+    def find_end_point_of_inside_point(self):
+        max_x = 0
+        for cord_index_1 in range(0,len(self.poly_1)-1):
+            for cord_index_2 in range(cord_index_1+1,len(self.poly_1)-1):
+                #print(abs(poly_1[cord_index_1][0] - poly_1[cord_index_2][0]))
+                distance_of_abs_x_point = abs(self.poly_1[cord_index_1][0] - self.poly_1[cord_index_2][0])
+                if max_x < distance_of_abs_x_point:
+                    max_x = distance_of_abs_x_point
+            
+        for cord_index_1 in range(0,len(self.poly_2)-1):
+            for cord_index_2 in range(cord_index_1+1,len(self.poly_2)-1):
+                #print(abs(poly_2[cord_index_1][0] - poly_2[cord_index_2][0]))
+                distance_of_abs_x_point = abs(self.poly_2[cord_index_1][0] - self.poly_2[cord_index_2][0])
+                if max_x < distance_of_abs_x_point:
+                    max_x = distance_of_abs_x_point
+        
+        return max_x
+        
 
 import numpy as np
 
@@ -123,6 +150,11 @@ final_cord = []
 
 poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
 poly_2 = [[-20,25],[15,25],[15,15],[-20,20],[-20,25]]
+
+
+#find end point of point
+obj_of_find_end_point = find_end_point_form_x(poly_1,poly_2)
+max_x = obj_of_find_end_point.find_end_point_of_inside_point()
 
 #check poly_1 point inside poly_2--------------------------------------------------------------------------------------------
 for cord_index_1 in range(0,len(poly_1)-1):
@@ -135,7 +167,7 @@ for cord_index_1 in range(0,len(poly_1)-1):
         
         #adding end point of point_p1
         add_end_point = abs(poly_1[cord_index_1][0])
-        point_p2 = np.array(poly_1[cord_index_1]) + np.array([add_end_point + (35*2),0])
+        point_p2 = np.array(poly_1[cord_index_1]) + np.array([add_end_point + (max_x*2),0])
         
         #for ploy_2 line point
         point_q1 = np.array(poly_2[cord_index_2])
@@ -154,7 +186,7 @@ for cord_index_1 in range(0,len(poly_1)-1):
         #adding end point of point_p1
         add_end_point = -abs(poly_1[cord_index_1][0])
         
-        point_p2 = np.array(poly_1[cord_index_1]) + np.array([add_end_point + (-(35*2)),0])
+        point_p2 = np.array(poly_1[cord_index_1]) + np.array([add_end_point + (-(max_x*2)),0])
         
         #for ploy_2 line point
         point_q1 = np.array(poly_2[cord_index_2])
@@ -185,7 +217,7 @@ for cord_index_1 in range(0,len(poly_2)-1):
         
         #adding end point of point_p1
         add_end_point = abs(poly_2[cord_index_1][0])
-        point_p2 = np.array(poly_2[cord_index_1]) + np.array([add_end_point + (35*2),0])
+        point_p2 = np.array(poly_2[cord_index_1]) + np.array([add_end_point + (max_x*2),0])
         
         #for ploy_2 line point
         point_q1 = np.array(poly_1[cord_index_2])
@@ -201,7 +233,7 @@ for cord_index_1 in range(0,len(poly_2)-1):
         #for left side pointing--------------------------------------------
         
         add_end_point = -abs(poly_2[cord_index_1][0])
-        point_p2 = np.array(poly_2[cord_index_1]) + np.array([add_end_point + (-(35*2)),0])
+        point_p2 = np.array(poly_2[cord_index_1]) + np.array([add_end_point + (-(max_x*2)),0])
         
         #for ploy_2 line point
         point_q1 = np.array(poly_1[cord_index_2])
