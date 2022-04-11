@@ -152,27 +152,12 @@ final_cord = []
 # poly_1 = [[-10,30],[10,20],[13,18],[-20,10],[-10,30]]
 # poly_2 = [[-20,30],[15,25],[15,15],[-5,20],[-20,30]]
 
-# poly_1 = [[-10,30],[-5,35],[10,20],[15, 10],[-20,10],[-20,20],[-10,30]]
-# poly_2 = [[-25,25],[-20,30],[-5,35],[15,25],[15,20],[-30,20],[-25,25]]
+poly_1 = [[-10,30],[-5,35],[10,20],[15, 10],[-20,10],[-20,20],[-10,30]]
+poly_2 = [[-25,25],[-20,30],[-5,35],[15,25],[15,20],[-30,20],[-25,25]]
 
-poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
-poly_2 = [[-20,25],[15,25],[15,15],[-20,20],[-20,25]]
+# poly_1 = [[-10,30],[10,20],[15,10],[-20,10],[-10,30]]
+# poly_2 = [[-20,25],[15,25],[15,15],[-20,20],[-20,25]]
 
-# poly_1 =  [[-30, 25], [-10, 10], [25, 20],[-30, 25]]
-# poly_2 = [[-20, 25], [5, 25], [4, 19], [-25, 5],[-20, 25]]
-
-# poly_1 = [(-50, 30), (50, 30), (60, -10), (0, -10),(-50, 30)]
-# poly_2 = [(-50, 20), (50, 20), (50, -10), (-20, -10),(-50, 20)]
-
-# poly_1 = [(20, 0), (0, 20), (-20, 20), (-20, 0),(20, 0)]
-# poly_2 = [(0, 30), (30, 0), (-5, 10),(0, 30)]
-
-# poly_1 = [[-10,30],[10,20],[15,10],[-20,10]]
-# poly_2 = [[20,25],[15,25],[15,15],[20,20]]
-
-
-poly_1.append(poly_1[0])
-poly_2.append(poly_2[0])
 
 #find end point of point
 obj_of_find_end_point = find_end_point_form_x(poly_1,poly_2)
@@ -291,62 +276,58 @@ for ploy_1_index in range(0,len(poly_1)-1):
 
 print(final_cord)
 
-if len(final_cord): 
-    max_y = final_cord[0][1]
-    bottom_max = final_cord[0]
+     
+max_y = final_cord[0][1]
+bottom_max = final_cord[0]
+
+for cord in final_cord:
+    if max_y > cord[1]:
+        bottom_max = cord   
+        max_y = cord[1]
+    elif max_y == cord[1] and bottom_max[0] > cord[0]:
+        bottom_max = cord
+        
+# print(bottom_max)
+final_cord.remove(bottom_max)
+
+arranged_coordinates= []
+angle_with_respect_to_cord = []
+for cord in final_cord:
+        angle = math.degrees(math.atan2((cord[1]-bottom_max[1]),(cord[0]-bottom_max[0])));
+        # print(angle,cord,(bottom_max[1]-cord[1]),(bottom_max[0]-cord[0]))
+        arranged_coordinates.append(cord)
+        angle_with_respect_to_cord.append(angle)
+        
+        
+print(angle_with_respect_to_cord)
 
 
-    for cord in final_cord:
-        if max_y > cord[1]:
-            bottom_max = cord   
-            max_y = cord[1]
-        elif max_y == cord[1] and bottom_max[0] > cord[0]:
-            bottom_max = cord
-            
-    # print(bottom_max)
-    final_cord.remove(bottom_max)
-
-    arranged_coordinates= []
-    angle_with_respect_to_cord = []
-    for cord in final_cord:
-            angle = math.degrees(math.atan2((cord[1]-bottom_max[1]),(cord[0]-bottom_max[0])));
-            # print(angle,cord,(bottom_max[1]-cord[1]),(bottom_max[0]-cord[0]))
-            arranged_coordinates.append(cord)
-            angle_with_respect_to_cord.append(angle)
-            
-            
-    print(angle_with_respect_to_cord)
-
-
-    for index,angle in enumerate(angle_with_respect_to_cord):
-        for index_1,angle_1 in enumerate(angle_with_respect_to_cord):
-            if(angle<=angle_1):
-                    if(angle<angle_1):
+for index,angle in enumerate(angle_with_respect_to_cord):
+    for index_1,angle_1 in enumerate(angle_with_respect_to_cord):
+        if(angle<=angle_1):
+                if(angle<angle_1):
+                    arranged_coordinates[index],arranged_coordinates[index_1] = arranged_coordinates[index_1],arranged_coordinates[index]
+                    angle_with_respect_to_cord[index],angle_with_respect_to_cord[index_1] = angle_with_respect_to_cord[index_1],angle_with_respect_to_cord[index]
+                elif(angle==angle_1):
+                    distance_by_bottom_max_1 = np.array(arranged_coordinates[index]) - np.array(bottom_max)
+                    distance_by_bottom_max_2 = np.array(arranged_coordinates[index_1]) - np.array(bottom_max)
+                    if False not in (distance_by_bottom_max_1>=distance_by_bottom_max_2):
                         arranged_coordinates[index],arranged_coordinates[index_1] = arranged_coordinates[index_1],arranged_coordinates[index]
                         angle_with_respect_to_cord[index],angle_with_respect_to_cord[index_1] = angle_with_respect_to_cord[index_1],angle_with_respect_to_cord[index]
-                    elif(angle==angle_1):
-                        distance_by_bottom_max_1 = np.array(arranged_coordinates[index]) - np.array(bottom_max)
-                        distance_by_bottom_max_2 = np.array(arranged_coordinates[index_1]) - np.array(bottom_max)
-                        if False not in (distance_by_bottom_max_1>=distance_by_bottom_max_2):
-                            arranged_coordinates[index],arranged_coordinates[index_1] = arranged_coordinates[index_1],arranged_coordinates[index]
-                            angle_with_respect_to_cord[index],angle_with_respect_to_cord[index_1] = angle_with_respect_to_cord[index_1],angle_with_respect_to_cord[index]
-                            
-        
-    arranged_coordinates.insert(0,bottom_max)   
-    arranged_coordinates.append(arranged_coordinates[0])   
-    print(arranged_coordinates)
+                        
+      
+arranged_coordinates.insert(0,bottom_max)   
+arranged_coordinates.append(arranged_coordinates[0])   
+print(arranged_coordinates)
 
-    #find area
-    area_of_overlapping_polygon = 0
-    for cord_index in range(0,len(arranged_coordinates)-1):
-        area_of_overlapping_polygon += np.linalg.det(np.array([arranged_coordinates[cord_index],arranged_coordinates[cord_index+1]]))
-        
-    print('Area of overlapping polygon is: ',area_of_overlapping_polygon/2)
-
-
-    end_time = time.time()
-
-    print('Time: ',end_time-start_time)
+#find area
+area_of_overlapping_polygon = 0
+for cord_index in range(0,len(arranged_coordinates)-1):
+    area_of_overlapping_polygon += np.linalg.det(np.array([arranged_coordinates[cord_index],arranged_coordinates[cord_index+1]]))
     
-else:
-    print('polygon is not overlapping each other')
+print('Area of overlapping polygon is: ',area_of_overlapping_polygon/2)
+
+
+end_time = time.time()
+
+print(end_time-start_time)
