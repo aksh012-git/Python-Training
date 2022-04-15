@@ -1,7 +1,7 @@
 # Write a NumPy program to compute the eigenvalues and eigenvectors of a given square array
 import numpy as np
 
-array = np.array([[3,-2],[1,0]])
+array = np.array( [[2,3], [-2,7]])
 
 Eigenvalue,Eigenvector = np.linalg.eig(array)
 

@@ -1,8 +1,3 @@
-# Find the max sum of sub array
-# 			Ex L = [5, 4, 7, -2, 5, 0, 6, 9, 15, -3]
-# 			Output = 49
-
-num_list = [5, 4, 7, -2, 5, 0, 6, 9, 15, -3]
 num_list = [-2,1,-3,4,-1,2,1,-5,4]
 
 sum_of_all_value = sum(num_list)

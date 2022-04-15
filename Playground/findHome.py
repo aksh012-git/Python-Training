@@ -9,7 +9,6 @@ dictionary = [
 input = [0]
 
 final_array = []
-
 max_dist = 15
 
 for k in range(len(dictionary)):
